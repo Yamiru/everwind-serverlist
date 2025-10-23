@@ -1,0 +1,2 @@
+# everwind-serverlist
+Everwind serverlist
