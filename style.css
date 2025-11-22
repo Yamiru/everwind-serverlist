@@ -1,0 +1,195 @@
+/*!
+ * Everwind Servers Landing Page Styles
+ * Copyright (c) 2025 Viktor Vasko (Yamiru)
+ * Licensed under the MIT License. See LICENSE file in the project root.
+ */
+
+:root {
+  --bg0: #0b1022;
+  --bg1: #0f1633;
+  --bg2: #121a3d;
+  --c: #38e1db;
+  --v: #9b6bff;
+  --g: #fce9b5;
+  --ink: #e9f7ff;
+  --muted: #b0c4d9;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body.twilight {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg1);
+  overflow-x: hidden;
+}
+
+/* Background layers */
+.twilight-static {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: radial-gradient(
+    120% 90% at 50% -20%,
+    #1b244a 0%,
+    var(--bg1) 45%,
+    var(--bg2) 100%
+  );
+}
+
+#bgCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  will-change: transform, opacity;
+}
+
+/* Layout helpers */
+.container {
+  max-width: 980px;
+  margin-inline: auto;
+  padding: 24px;
+}
+
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* Typography */
+h1 {
+  margin: 0.5rem 0;
+}
+
+.tw-title {
+  font-family: "Cinzel Decorative", serif;
+  background: linear-gradient(135deg, var(--c) 0%, var(--v) 60%, var(--g) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 12px rgba(56, 225, 219, 0.45),
+    0 0 24px rgba(155, 107, 255, 0.22);
+}
+
+.tw-body {
+  color: var(--ink);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.tw-muted {
+  color: var(--muted);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+p {
+  line-height: 1.75;
+}
+
+/* Utilities */
+.fw-bold {
+  font-weight: 700;
+}
+
+.small {
+  font-size: 0.875rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Links */
+a {
+  color: var(--c);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Footer */
+.tw-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 14, 32, 0.6);
+  backdrop-filter: blur(8px);
+  padding: 16px;
+}
+
+.tw-footer p {
+  max-width: 1100px;
+  margin: 0.35rem auto;
+}
+
+/* Logo (prepared if you add one later) */
+.logo {
+  width: min(320px, 60vw);
+  height: auto;
+  display: block;
+  margin: 0.5rem auto;
+}
+
+/* Display sizes */
+.display-5 {
+  font-size: 2.6rem;
+}
+
+.lead {
+  font-size: 1.12rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .display-5 {
+    font-size: 1.9rem;
+  }
+
+  .lead {
+    font-size: 1.02rem;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  #bgCanvas {
+    display: none;
+  }
+
+  .twilight-static {
+    z-index: 0;
+  }
+}
