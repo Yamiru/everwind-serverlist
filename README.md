@@ -5,6 +5,7 @@ hub – a future server list for community worlds in the fantasy MMORPG _Everwin
 
 > ⚠️ This is **not** an official project of any game studio. See the disclaimer below.
 
+Replace https://example.com with your own website inside the index.html.
 ---
 
 ## Features
